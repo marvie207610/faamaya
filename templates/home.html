@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}Faamaya EcoTech – People-powered restoration{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- HERO SECTION -->
+<section class="hero-section">
+  <div class="hero-overlay"></div>
+  <video class="hero-video" autoplay muted loop>
+    <source src="{% static 'videos/background.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  
+  <!-- Faint Light Blue Overlay -->
+  <div class="hero-overlay"></div>
+
+  <div class="hero-text">
+    <h2 class="hero-subtitle">The Eco-social Restoration Platform</h2>
+    <h1 class="hero-title">FAAMAYA ECOTECH</h1>
+    <p class="hero-tagline">JOIN FAAMAYA ECOTECH – ECO-SOCIAL RESTORATION TECHNOLOGY FOR AFRICA</p>
+    <a href="#" class="hero-btn">Explore Projects</a>
+  </div>
+</section>
+
+
+<!-- INTRODUCTION -->
+<section class="intro-section">
+  <div class="container">
+    <h3>WHAT IS FAAMAYA ECO-TECH?</h3>
+    <p>
+      Faamaya EcoTech is reshaping Africa’s Great Green Wall with smart reforestation powered by AI and local communities.
+      Through eDNA, satellites, and machine learning, we plant trees that last — with real ownership and benefits for the people.
+    </p>
+    <div class="intro-buttons">
+      <a href="{% url 'account_login' %}" class="btn btn-outline">Sign In</a>
+      <a href="{% url 'account_signup' %}" class="btn btn-primary">Register</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS SECTION -->
+<section class="dark-bg stats-section" id="stats-section">
+  <h4>The Impact So Far</h4>
+  <div class="stats-grid">
+    <div class="stat-box classifications">
+      <div class="stat-number" id="classifications-count" data-target="{{ total_classifications|default:1204 }}">0</div>
+      <div class="stat-label">Classifications</div>
+    </div>
+    <div class="stat-box volunteers">
+      <div class="stat-number" id="volunteers-count" data-target="{{ total_volunteers|default:380 }}">0</div>
+      <div class="stat-label">Volunteers</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function animateCount(id, target, duration = 2000) {
+    const el = document.getElementById(id);
+    if (!el || isNaN(target)) return;
+
+    let start = 0;
+    const step = Math.ceil(target / (duration / 16));
+
+    function update() {
+      start += step;
+      if (start < target) {
+        el.innerText = start.toLocaleString();
+        requestAnimationFrame(update);
+      } else {
+        el.innerText = target.toLocaleString();
+      }
+    }
+
+    update();
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    let animated = false;
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !animated) {
+          animated = true;
+
+          const classifications = parseInt(document.getElementById("classifications-count").dataset.target);
+          const volunteers = parseInt(document.getElementById("volunteers-count").dataset.target);
+
+          animateCount("classifications-count", classifications);
+          animateCount("volunteers-count", volunteers);
+          
+          observer.disconnect(); // Stop observing after animation
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(document.getElementById("stats-section"));
+  });
+</script>
+
+
+
+<!-- FEATURED PROJECTS -->
+<section class="projects-section">
+  <div class="container">
+    <h3 class="section-heading">Featured Projects</h3>
+    <div class="divider"></div>
+    <div class="projects-grid">
+      {% if featured_projects %}
+        {% for project in featured_projects %}
+        <div class="project-card">
+          <img src="{{ project.image.url }}" alt="{{ project.title }}">
+          <div class="project-info">
+            <div class="project-title">{{ project.title }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <!-- Default Projects if none exist -->
+        <div class="project-card">
+          <img src="{% static 'uploads/default_project.png' %}" alt="Tree AI Project">
+          <div class="project-info"><div class="project-title">AI-Powered Tree Selector</div></div>
+        </div>
+        <div class="project-card">
+          <img src="{% static 'uploads/default_project.png' %}" alt="Restoration Project">
+          <div class="project-info"><div class="project-title">Sahel Ecosystem Tracker</div></div>
+        </div>
+        <div class="project-card">
+          <img src="{% static 'uploads/default_project.png' %}" alt="DNA Mapping">
+          <div class="project-info"><div class="project-title">eDNA Soil Analyzer</div></div>
+        </div>
+        <div class="project-card">
+          <img src="{% static 'uploads/default_project.png' %}" alt="Satellite Project">
+          <div class="project-info"><div class="project-title">Satellite Growth Monitor</div></div>
+        </div>
+      {% endif %}
+    </div>
+    <div class="view-all-btn">
+      <a href="#" class="btn btn-secondary">View All Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO VIDEO SECTION -->
+<section class="intro-video-section">
+  <div class="container">
+    <h2>Explore the Faamaya Vision</h2>
+    <p>Discover how our platform works – from data to community transformation.</p>
+    <div class="video-wrapper">
+      <video controls>
+        <source src="{% static 'videos/introduction.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY SECTION -->
+<section class="community-section">
+  <div class="container">
+    <h2 class="section-title">THE FAAMAYA ECOTECH COMMUNITY</h2>
+    <h3 class="section-subtitle">What's Happening?</h3>
+    <div class="posts-wrapper">
+      {% for post in posts %}
+      <div class="post-card">
+        <div class="post-img">
+          <img src="{{ post.image_url }}" alt="{{ post.title }}">
+        </div>
+        <div class="post-content">
+          <p class="post-date">{{ post.date }}</p>
+          <h4 class="post-title">{{ post.title }}</h4>
+          <p class="post-snippet">{{ post.snippet }}</p>
+          <a href="{{ post.url }}" class="read-more">Read more</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Why Join Us Now{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/challenge.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="challenge-section">
+  <h2>Why Join Us Now</h2>
+  <p class="intro">
+    This is a pivotal moment in the fight for ecological restoration across the Sahel. We're not just planting trees—we're redefining the approach through smart technology and grassroots power.
+  </p>
+
+  <div class="challenge-grid">
+    <div class="step">
+      <img src="{% static 'images/tech-breakthrough.png' %}" alt="Tech Icon">
+      <h3>Technological Breakthrough</h3>
+      <p>We’re developing an AI system tailored for the Sahel that combines botanical, geological, and social data to radically improve reforestation success.</p>
+    </div>
+    <div class="step">
+      <img src="{% static 'images/impact-potential.png' %}" alt="Impact Icon">
+      <h3>Massive Impact Potential</h3>
+      <p>Our 5-year plan aims to transform tree planting across a vital ecological frontier—fighting climate change while boosting local economies.</p>
+    </div>
+    <div class="step">
+      <img src="{% static 'images/team-building.png' %}" alt="Team Icon">
+      <h3>Building a Team</h3>
+      <p>We're uniting AI, environmental science, and grassroots action—backed by regional insight and a passion to restore Africa’s landscapes.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

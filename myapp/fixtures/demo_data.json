@@ -1,0 +1,41 @@
+[
+  {
+    "model": "myapp.category",
+    "pk": 1,
+    "fields": {
+      "name": "AI & Reforestation",
+      "slug": "ai-reforestation",
+      "color": "#34a853",
+      "description": "Projects related to AI and reforestation."
+    }
+  },
+  {
+    "model": "myapp.project",
+    "pk": 1,
+    "fields": {
+      "title": "Green AI Tree Mapping",
+      "slug": "green-ai-tree-mapping",
+      "description": "Mapping tree coverage using AI and drone imagery.",
+      "category": 1,
+      "image": "projects/tree-project.png",
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2024-06-01T10:00:00Z",
+      "updated_at": "2024-06-01T10:00:00Z",
+      "volunteers_count": 5,
+      "classifications_count": 15
+    }
+  },
+  {
+    "model": "myapp.blogpost",
+    "pk": 1,
+    "fields": {
+      "title": "Restoring Ecosystems with Machine Learning",
+      "slug": "restoring-ecosystems-ml",
+      "thumbnail": "blog_thumbnails/blog-post.png",
+      "excerpt": "Discover how AI is accelerating forest recovery...",
+      "content": "Full blog content here...",
+      "date": "2024-06-01T10:00:00Z"
+    }
+  }
+]

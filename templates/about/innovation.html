@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Our Innovation{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/challenge.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="challenge-section">
+  <h2>Our Innovation: Where AI Meets Community</h2>
+  <p class="intro">
+    We are building a groundbreaking platform that combines cutting-edge AI with community-driven implementation to transform ecological restoration.
+  </p>
+
+  <div class="challenge-grid">
+    <div class="step">
+      <img src="{% static 'images/ai-icon.png' %}" alt="AI Icon">
+      <h3>AI-Driven Intelligence</h3>
+      <p>We integrate environmental DNA analysis, remote sensing, machine learning, and portable soil testing to recommend the best species for specific locations.</p>
+    </div>
+    <div class="step">
+      <img src="{% static 'images/community-tech.png' %}" alt="Community Icon">
+      <h3>Community Empowerment</h3>
+      <p>We equip communities with AR visualization tools, IoT monitoring, and mobile payments—turning tree care into sustainable livelihoods.</p>
+    </div>
+    <div class="step">
+      <img src="{% static 'images/impact-driven.png' %}" alt="Impact Icon">
+      <h3>Long-Term Impact</h3>
+      <p>By linking reforestation success to community rewards, we create an ecosystem where ecological health and human wellbeing grow together.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

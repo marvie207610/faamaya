@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About | Faamaya EcoTech{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Sub Navigation -->
+<div class="sub-nav">
+  <a href="#" class="active">About</a>
+  <a href="#">Publications</a>
+  <a href="{% url 'our_team' %}">Our Team</a>
+  <a href="#">Resources</a>
+  <a href="#">FAQ</a>
+</div>
+
+<!-- Main Content Wrapper -->
+<div class="center-wrapper">
+  <main class="content">
+    <section>
+      <h2>About <strong>Faamaya EcoTech</strong></h2>
+      <p>
+        The Eco-social Restoration Platform aims to contribute to the transformation of the Great Green Wall initiative by combining AI-driven species selection with deep community engagement.
+        While current tree planting sees 70–80% failure rates across the Sahel, our integrated approach leverages environmental DNA analysis, satellite imaging, machine learning, and community-owned monitoring to create self-sustaining ecosystems.
+        Our five-year implementation plan transitions from data collection to local ownership, generating revenue through carbon credits while empowering communities via mobile payment systems and AR tools.
+        <a href="#">Read our publications</a> to explore how we turn reforestation into a self-learning, income-generating ecosystem.
+      </p>
+    </section>
+
+    <section class="highlight-section">
+      <h2>The Challenge We Are Solving</h2>
+      <p>
+        The Great Green Wall initiative has invested billions, yet faces staggering 70–80% tree planting failure rates across the Sahel region.
+        Only 4% of the original reforestation goals have been achieved. This isn’t just an environmental crisis—it is a failure of approach that impacts millions of lives.
+      </p>
+    </section>
+
+    <section class="highlight-section">
+      <h2>Our Innovation: Where <strong>AI Meets Community</strong></h2>
+      <p>
+        We are building a groundbreaking platform that combines cutting-edge AI with community-driven implementation to transform ecological restoration:
+      </p>
+      <ul>
+        <li><strong>AI-Driven Intelligence:</strong> Environmental DNA analysis, remote sensing, ML, and portable soil testing recommend the best species for each location.</li>
+        <li><strong>Community Empowerment:</strong> Tools like AR visualization, IoT monitoring, and mobile payment systems provide economic incentives and ownership to local people.</li>
+      </ul>
+    </section>
+
+    <section class="highlight-section">
+      <h2>Why Join Us Now</h2>
+      <ol>
+        <li><strong>Technological Breakthrough:</strong> Our AI is tailored for the Sahel, using botanical, geological, and social data to boost reforestation success rates.</li>
+        <li><strong>Massive Impact Potential:</strong> Our 5-year plan aims to revolutionize tree planting, fight climate change, and enhance livelihoods.</li>
+        <li><strong>Strong Team:</strong> We blend expertise in AI, environmental science, and community development—rooted in deep local knowledge.</li>
+      </ol>
+    </section>
+
+    <section class="highlight-section">
+      <h2>What Makes Us Different</h2>
+      <ul>
+        <li>Self-improving data systems that learn from results</li>
+        <li>Community ownership and knowledge independence</li>
+        <li>Revenue generation via carbon credits</li>
+        <li>Reforestation as a <strong>social movement</strong>—not just a technical fix</li>
+      </ul>
+    </section>
+  </main>
+</div>
+{% endblock %}

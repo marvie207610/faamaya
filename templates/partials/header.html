@@ -1,0 +1,68 @@
+{% load static %}
+{% load account %}  {# Optional but safe for future-proofing with allauth #}
+
+<header class="header" id="main-header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Logo -->
+            <a href="{% url 'home' %}" class="logo">
+                <img src="{% static 'images/faamaya-logo.jpg' %}" alt="Faamaya EcoTech Logo" class="logo-img" style="height: 70px;">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <ul class="nav-menu">
+                    <li><a href="{% url 'projects' %}" class="nav-link">Projects</a></li>
+                    <li><a href="{% url 'about' %}" class="nav-link">About</a></li>
+                    <li><a href="{% url 'get_involved' %}" class="nav-link">Get Involved</a></li>
+                    <li><a href="{% url 'talk' %}" class="nav-link">Talk</a></li>
+                    <li><a href="{% url 'build' %}" class="nav-link">Build</a></li>
+                </ul>
+            </nav>
+
+            <!-- Auth Buttons -->
+            <div class="auth-buttons">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'profile' %}" class="btn btn-outline">Profile</a>
+                    <form method="post" action="{% url 'account_logout' %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary">Logout</button>
+                    </form>
+                {% else %}
+                   <a href="{% url 'account_login' %}" class="btn btn-outline">Login</a>
+                   <a href="{% url 'account_signup' %}" class="btn btn-primary">Register</a>
+                {% endif %}
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile" id="mobile-nav">
+            <ul class="mobile-nav-menu">
+                <li><a href="{% url 'projects' %}" class="mobile-nav-link">Projects</a></li>
+                <li><a href="{% url 'about' %}" class="mobile-nav-link">About</a></li>
+                <li><a href="{% url 'get_involved' %}" class="mobile-nav-link">Get Involved</a></li>
+                <li><a href="{% url 'talk' %}" class="mobile-nav-link">Talk</a></li>
+                <li><a href="{% url 'build' %}" class="mobile-nav-link">Build</a></li>
+            </ul>
+            <div class="mobile-auth-buttons">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'profile' %}" class="btn btn-outline btn-block">Profile</a>
+                    <form method="post" action="{% url 'account_logout' %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary btn-block">Logout</button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'account_login' %}" class="btn btn-outline btn-block">Sign In</a>
+                    <a href="{% url 'account_signup' %}" class="btn btn-primary btn-block">Register</a>
+                {% endif %}
+            </div>
+        </nav>
+    </div>
+</header>

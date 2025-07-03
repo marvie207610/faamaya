@@ -1,0 +1,105 @@
+/* Center wrapper to align content in middle */
+.center-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Content container */
+.content {
+  max-width: 860px;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Section spacing */
+.content section {
+  margin-bottom: 3rem;
+}
+
+/* Headings */
+.content h2 {
+  font-size: 1.8rem;
+  color: #007c91;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.content h2 strong {
+  color: #005f70;
+}
+
+/* Paragraphs */
+.content p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+
+/* Lists */
+.content ul,
+.content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+.content ul li,
+.content ol li {
+  margin-bottom: 0.75rem;
+}
+
+/* Links */
+.content a {
+  color: #007c91;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.content a:hover {
+  text-decoration: none;
+  color: #005f70;
+}
+
+/* Highlight section */
+.highlight-section {
+  border-left: 4px solid #00a3ad;
+  padding-left: 1.5rem;
+  background-color: #f9fafa;
+  border-radius: 12px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Sub-navigation */
+.sub-nav {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
+  background-color: #f0fafa;
+}
+
+.sub-nav a {
+  text-decoration: none;
+  color: #007c91;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.sub-nav a.active,
+.sub-nav a:hover {
+  background-color: #007c91;
+  color: #fff;
+}

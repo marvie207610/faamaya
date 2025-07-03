@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Projects{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/projects.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="projects-container">
+  <h1>Projects</h1>
+  <div class="tabs">
+    <button class="tab active" data-tab="active">Active</button>
+    <button class="tab" data-tab="paused">Paused</button>
+    <button class="tab" data-tab="finished">Finished</button>
+  </div>
+
+  <div class="tab-content active" id="active">
+    {% for project in active_projects %}
+      <div class="project-card">
+        <img src="{{ project.image.url }}" alt="{{ project.title }}">
+        <p>{{ project.title }}</p>
+      </div>
+    {% empty %}
+      <p>No active projects.</p>
+    {% endfor %}
+  </div>
+
+  <div class="tab-content" id="paused">
+    {% for project in paused_projects %}
+      <div class="project-card">
+        <img src="{{ project.image.url }}" alt="{{ project.title }}">
+        <p>{{ project.title }}</p>
+      </div>
+    {% empty %}
+      <p>No paused projects.</p>
+    {% endfor %}
+  </div>
+
+  <div class="tab-content" id="finished">
+    {% for project in finished_projects %}
+      <div class="project-card">
+        <img src="{{ project.image.url }}" alt="{{ project.title }}">
+        <p>{{ project.title }}</p>
+      </div>
+    {% empty %}
+      <p>No finished projects.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const contents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+{% endblock %}

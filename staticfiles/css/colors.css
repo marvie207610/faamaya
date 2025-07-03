@@ -1,0 +1,103 @@
+/* Color variables */
+:root {
+  /* Primary colors */
+  --color-primary: #3498db;
+  --color-primary-light: #5dade2;
+  --color-primary-dark: #2980b9;
+
+  /* Secondary colors */
+  --color-secondary: #e74c3c;
+  --color-secondary-light: #ec7063;
+  --color-secondary-dark: #c0392b;
+
+  /* Neutral colors */
+  --color-black: #2c3e50;
+  --color-dark-gray: #34495e;
+  --color-gray: #7f8c8d;
+  --color-light-gray: #bdc3c7;
+  --color-lighter-gray: #ecf0f1;
+  --color-white: #ffffff;
+
+  /* Category colors */
+  --color-astronomy: #3498db;
+  --color-ecology: #27ae60;
+  --color-history: #8e44ad;
+  --color-medicine: #e74c3c;
+  --color-climate: #f39c12;
+  --color-language: #16a085;
+
+  /* Status colors */
+  --color-success: #2ecc71;
+  --color-warning: #f1c40f;
+  --color-danger: #e74c3c;
+  --color-info: #3498db;
+
+  /* Background colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #ecf0f1;
+  --bg-dark: #2c3e50;
+
+  /* Text colors */
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --text-light: #bdc3c7;
+  --text-white: #ffffff;
+
+  /* Border colors */
+  --border-light: #ecf0f1;
+  --border-medium: #bdc3c7;
+  --border-dark: #7f8c8d;
+}
+
+/* Color utility classes */
+.bg-primary {
+  background-color: var(--color-primary);
+}
+.bg-primary-light {
+  background-color: var(--color-primary-light);
+}
+.bg-primary-dark {
+  background-color: var(--color-primary-dark);
+}
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+.bg-white {
+  background-color: var(--color-white);
+}
+.bg-light-gray {
+  background-color: var(--color-lighter-gray);
+}
+.bg-dark {
+  background-color: var(--color-black);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+.text-secondary {
+  color: var(--text-secondary);
+}
+.text-white {
+  color: var(--text-white);
+}
+.text-primary-color {
+  color: var(--color-primary);
+}
+.text-secondary-color {
+  color: var(--color-secondary);
+}
+
+.border-light {
+  border-color: var(--border-light);
+}
+.border-medium {
+  border-color: var(--border-medium);
+}
+.border-dark {
+  border-color: var(--border-dark);
+}
+.border-primary {
+  border-color: var(--color-primary);
+}

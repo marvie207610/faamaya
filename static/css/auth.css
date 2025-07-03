@@ -1,0 +1,9 @@
+/* ===============================
+   ZOONIVERSE-INSPIRED AUTH STYLES
+   =============================== */
+
+/* CSS Variables for consistent theming */
+:root {
+    --primary-color: #00979D;
+    --primary-dark: #007B7F;
+}

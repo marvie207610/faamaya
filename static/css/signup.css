@@ -1,0 +1,239 @@
+/* ===== Global Layout ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #e6f0ff, #ffffff);
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.auth-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.auth-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* ===== Left Panel ===== */
+.auth-visual {
+  background: #00509e;
+  color: white;
+  flex: 1;
+  min-width: 300px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-visual h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.auth-visual p {
+  margin-bottom: 2rem;
+}
+
+.impact-stats {
+  margin-bottom: 2rem;
+}
+
+.impact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.impact-icon {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+
+/* ===== Right Panel ===== */
+.auth-form-section {
+  flex: 1;
+  min-width: 300px;
+  padding: 2rem;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.form-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.form-header p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.form-section {
+  margin-bottom: 2rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.form-field label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Input Boxes (important) ===== */
+.input-box {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
+  box-sizing: border-box;
+  margin-top: 6px;
+}
+
+.input-box:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
+}
+
+/* ===== File Upload ===== */
+.file-upload-wrapper {
+  background: #f9f9f9;
+  padding: 1rem;
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.file-upload-text {
+  color: #666;
+  font-size: 0.875rem;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #00509e;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #003f7d;
+}
+
+.btn i {
+  margin-left: 0.5rem;
+}
+
+/* ===== Divider & Footer ===== */
+.form-divider {
+  text-align: center;
+  margin: 1.5rem 0;
+  font-weight: 600;
+}
+
+.social-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn-social {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.form-footer {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ===== Password Strength ===== */
+.password-strength {
+  margin-top: 0.5rem;
+}
+
+.strength-bar {
+  height: 6px;
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.3rem;
+}
+
+.strength-fill {
+  height: 100%;
+  width: 0%;
+  background-color: red;
+  transition: width 0.3s ease;
+}
+
+.strength-fill.strength-fair { background-color: orange; }
+.strength-fill.strength-medium { background-color: #f0c000; }
+.strength-fill.strength-strong { background-color: green; }
+
+.strength-text {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* ===== Floating Particles ===== */
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.floating-particle {
+  width: 15px;
+  height: 15px;
+  background-color: rgba(0, 80, 158, 0.2);
+  border-radius: 50%;
+  position: absolute;
+  animation: float 10s infinite ease-in-out alternate;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-40px) translateX(20px); }
+}

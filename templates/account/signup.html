@@ -1,0 +1,258 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}Join Tilekural - People-Powered Research{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="auth-container register-page">
+  <div class="auth-wrapper">
+    <!-- Visual Side -->
+    <div class="auth-visual">
+      <div class="visual-content">
+        <div class="visual-icon"><i class="fas fa-users"></i></div>
+        <h2>Join the Research Revolution</h2>
+        <p>Become part of the world's largest citizen science platform. Help real scientists make discoveries from home.</p>
+        <div class="impact-stats">
+          <div class="impact-item">
+            <i class="fas fa-certificate"></i>
+            <strong>500+ Publications</strong>
+            <span>Powered by volunteers</span>
+          </div>
+          <div class="impact-item">
+            <i class="fas fa-globe"></i>
+            <strong>Global Community</strong>
+            <span>190+ countries</span>
+          </div>
+          <div class="impact-item">
+            <i class="fas fa-graduation-cap"></i>
+            <strong>Learn & Grow</strong>
+            <span>Contribute and gain knowledge</span>
+          </div>
+        </div>
+        <div class="testimonial">
+          <blockquote>"I've helped discover new planets and classify wildlife. It's amazing what we can achieve together!"</blockquote>
+          <cite>- Sarah M., Volunteer since 2019</cite>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Side -->
+    <div class="auth-form-section">
+      <div class="form-container">
+        <div class="form-header">
+          <h1>Create Your Account</h1>
+          <p>Start making discoveries today</p>
+        </div>
+
+        <form method="post" enctype="multipart/form-data" class="auth-form register-form">
+          {% csrf_token %}
+
+          <!-- Personal Info -->
+          <div class="form-section">
+            <h3>Personal Information</h3>
+            <div class="form-row">
+              <div class="form-field half">
+                <label><i class="fas fa-user"></i> First Name</label>
+                {{ user_form.first_name|add_class:"input-box"|attr:"placeholder:Enter your first name" }}
+                {% for error in user_form.first_name.errors %}
+                  <p class="error-message">{{ error }}</p>
+                {% endfor %}
+              </div>
+              <div class="form-field half">
+                <label><i class="fas fa-user"></i> Last Name</label>
+                {{ user_form.last_name|add_class:"input-box"|attr:"placeholder:Enter your last name" }}
+                {% for error in user_form.last_name.errors %}
+                  <p class="error-message">{{ error }}</p>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="form-field">
+              <label><i class="fas fa-envelope"></i> Email</label>
+              {{ user_form.email|add_class:"input-box"|attr:"placeholder:Enter your email address" }}
+              {% for error in user_form.email.errors %}
+                <p class="error-message">{{ error }}</p>
+              {% endfor %}
+            </div>
+            <div class="form-field">
+              <label><i class="fas fa-at"></i> Username</label>
+              {{ user_form.username|add_class:"input-box"|attr:"placeholder:Choose a username" }}
+              {% for error in user_form.username.errors %}
+                <p class="error-message">{{ error }}</p>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Security -->
+          <div class="form-section">
+            <h3>Security</h3>
+            <div class="form-field">
+              <label><i class="fas fa-lock"></i> Password</label>
+              {{ user_form.password1|add_class:"input-box"|attr:"placeholder:Enter a strong password" }}
+              <div class="password-strength">
+                <div class="strength-bar"><div class="strength-fill"></div></div>
+                <span class="strength-text">Password strength</span>
+              </div>
+              {% for error in user_form.password1.errors %}
+                <p class="error-message">{{ error }}</p>
+              {% endfor %}
+            </div>
+            <div class="form-field">
+              <label><i class="fas fa-lock"></i> Confirm Password</label>
+              {{ user_form.password2|add_class:"input-box"|attr:"placeholder:Re-enter your password" }}
+              {% for error in user_form.password2.errors %}
+                <p class="error-message">{{ error }}</p>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Additional Info -->
+          <div class="form-section">
+            <h3>Additional Details</h3>
+            <div class="form-row">
+              <div class="form-field half">
+                <label><i class="fas fa-flag"></i> Nationality</label>
+                {{ profile_form.nationality|add_class:"input-box"|attr:"placeholder:Your nationality" }}
+                {% for error in profile_form.nationality.errors %}
+                  <p class="error-message">{{ error }}</p>
+                {% endfor %}
+              </div>
+              <div class="form-field half">
+                <label><i class="fas fa-globe-americas"></i> Country</label>
+                {{ profile_form.country|add_class:"input-box"|attr:"placeholder:Your country" }}
+                {% for error in profile_form.country.errors %}
+                  <p class="error-message">{{ error }}</p>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field half">
+                <label><i class="fas fa-phone"></i> Phone Number</label>
+                {{ profile_form.phone_number|add_class:"input-box"|attr:"placeholder:+234..." }}
+                {% for error in profile_form.phone_number.errors %}
+                  <p class="error-message">{{ error }}</p>
+                {% endfor %}
+              </div>
+              <div class="form-field half">
+                <label><i class="fas fa-calendar"></i> Date of Birth</label>
+                {{ profile_form.date_of_birth|add_class:"input-box"|attr:"placeholder:YYYY-MM-DD" }}
+                {% for error in profile_form.date_of_birth.errors %}
+                  <p class="error-message">{{ error }}</p>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="form-field file-field">
+              <label><i class="fas fa-camera"></i> Profile Photo (Optional)</label>
+              <div class="file-upload-wrapper">
+                {{ profile_form.passport_photo }}
+                <div class="file-upload-text">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <span>Click to upload or drag & drop</span>
+                  <small>PNG, JPG up to 2MB</small>
+                </div>
+              </div>
+              {% for error in profile_form.passport_photo.errors %}
+                <p class="error-message">{{ error }}</p>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Agreements -->
+          <div class="form-agreements">
+            <label class="checkbox-wrapper">
+              <input type="checkbox" name="terms" required>
+              <span class="checkbox-custom"></span>
+              I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a>
+            </label>
+            <label class="checkbox-wrapper">
+              <input type="checkbox" name="newsletter">
+              <span class="checkbox-custom"></span>
+              Send me updates
+            </label>
+          </div>
+
+          {% for error in user_form.non_field_errors %}
+            <p class="error-message">{{ error }}</p>
+          {% endfor %}
+          {% for error in profile_form.non_field_errors %}
+            <p class="error-message">{{ error }}</p>
+          {% endfor %}
+
+          <button type="submit" class="btn btn-primary btn-large">
+            <span>Create Account</span>
+            <i class="fas fa-rocket"></i>
+          </button>
+        </form>
+
+        <div class="form-divider"><span>or</span></div>
+        <div class="social-auth">
+          <button class="btn btn-social btn-google"><i class="fab fa-google"></i> Sign up with Google</button>
+          <button class="btn btn-social btn-github"><i class="fab fa-github"></i> Sign up with GitHub</button>
+        </div>
+        <div class="form-footer">
+          <p>Already have an account? <a href="{% url 'account_login' %}" class="signin-link">Sign in here</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Floating Particles -->
+<div class="floating-elements">
+  <div class="floating-particle particle-1"></div>
+  <div class="floating-particle particle-2"></div>
+  <div class="floating-particle particle-3"></div>
+  <div class="floating-particle particle-4"></div>
+  <div class="floating-particle particle-5"></div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const passwordField = document.querySelector('input[name="password1"]');
+  const strengthFill = document.querySelector('.strength-fill');
+  const strengthText = document.querySelector('.strength-text');
+
+  if (passwordField && strengthFill) {
+    passwordField.addEventListener('input', function () {
+      const password = this.value;
+      let strength = 0;
+      if (password.length >= 8) strength += 25;
+      if (/[a-z]/.test(password)) strength += 25;
+      if (/[A-Z]/.test(password)) strength += 25;
+      if (/[0-9]/.test(password) || /[^a-zA-Z0-9]/.test(password)) strength += 25;
+      strengthFill.style.width = strength + '%';
+      strengthText.textContent = strength >= 75 ? 'Strong' : (strength >= 50 ? 'Medium' : 'Weak');
+      strengthFill.className = 'strength-fill strength-' + strengthText.textContent.toLowerCase();
+    });
+  }
+
+  const fileInput = document.querySelector('input[type="file"]');
+  const fileText = document.querySelector('.file-upload-text span');
+  if (fileInput && fileText) {
+    fileInput.addEventListener('change', function () {
+      if (this.files && this.files[0]) {
+        fileText.textContent = this.files[0].name;
+      }
+    });
+  }
+
+  const form = document.querySelector('.register-form');
+  form.addEventListener('submit', function () {
+    const submitBtn = this.querySelector('button[type="submit"]');
+    submitBtn.classList.add('loading');
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating account...';
+  });
+
+  const particles = document.querySelectorAll('.floating-particle');
+  particles.forEach((particle, index) => {
+    particle.style.animationDelay = `${index * 0.8}s`;
+  });
+});
+</script>
+{% endblock %}

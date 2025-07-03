@@ -1,0 +1,51 @@
+.challenge-section {
+  padding: 3rem 2rem;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.challenge-section h2 {
+  font-size: 2rem;
+  color: #00695c;
+  margin-bottom: 1rem;
+}
+
+.challenge-section .intro {
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 2rem;
+  color: #444;
+  font-size: 1.1rem;
+}
+
+.challenge-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.step {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  width: 300px;
+  text-align: center;
+}
+
+.step img {
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.step h3 {
+  color: #00796b;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  font-size: 0.95rem;
+  color: #555;
+}

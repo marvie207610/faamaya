@@ -1,0 +1,63 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-sections">
+                <div class="footer-section">
+                    <h3 class="footer-title">About</h3>
+                    <ul class="footer-links">
+                        <li><a href="{% url 'about' %}">Our Story</a></li>
+                        <li><a href="{% url 'our_team' %}">Team</a></li>
+                        <li><a href="{% url 'publications' %}">Publications</a></li>
+                        <li><a href="{% url 'acknowledgements' %}">Acknowledgements</a></li>
+                    </ul>
+                </div>
+                       
+                <div class="footer-section">
+                    <h3 class="footer-title">Get Involved</h3>
+                    <ul class="footer-links">
+                        <li><a href="{% url 'volunteer' %}">Volunteer</a></li>
+                        <li><a href="{% url 'education' %}">Educator Resources</a></li>
+                        <li><a href="{% url 'mobile' %}">Mobile App</a></li>
+                        <li><a href="{% url 'daily' %}">Daily Faamaya</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Build</h3>
+                    <ul class="footer-links">
+                        <li><a href="{% url 'lab' %}">Project Builder</a></li>
+                        <li><a href="{% url 'dev' %}">Developer API</a></li>
+                        <li><a href="{% url 'data' %}">Data Exports</a></li>
+                        <li><a href="{% url 'panoptes' %}">Panoptes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Talk</h3>
+                    <ul class="footer-links">
+                        <li><a href="{% url 'talk' %}">Faamaya EcoTech</a></li>
+                        <li><a href="{% url 'blog' %}">Blog</a></li>
+                        <li><a href="https://twitter.com/the_Faamaya_EcoTech" target="_blank">Twitter</a></li>
+                        <li><a href="https://facebook.com/therealFaamaya EcoTech" target="_blank">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+    <div class="footer-logo">
+        <img src="{% static 'images/faamaya-logo.jpg' %}" alt="Faamaya Logo" class="logo-image">
+        <span class="logo-text">Faamaya EcoTech</span>
+    </div>
+    
+                <div class="footer-copyright">
+                    © 2025 Faamaya EcoTech. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

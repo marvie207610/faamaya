@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}What Makes Us Different{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/challenge.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="challenge-section">
+  <h2>What Makes Us Different</h2>
+  <p class="intro">
+    Unlike conventional reforestation efforts, we are changing the narrative. We are not just planting trees—we’re planting systems, ownership, and opportunity.
+  </p>
+
+  <div class="challenge-grid">
+    <div class="step">
+      <img src="{% static 'images/self-learning.png' %}" alt="Data Icon">
+      <h3>Self-Improving Systems</h3>
+      <p>We are building adaptive data systems that learn from field results to constantly improve species selection and restoration strategies.</p>
+    </div>
+    <div class="step">
+      <img src="{% static 'images/community-ownership.png' %}" alt="Ownership Icon">
+      <h3>Local Ownership & Knowledge</h3>
+      <p>Communities are equipped with tools and knowledge to lead their own restoration efforts—reducing dependency on foreign expertise.</p>
+    </div>
+    <div class="step">
+      <img src="{% static 'images/carbon-revenue.png' %}" alt="Revenue Icon">
+      <h3>Sustainable Revenue Streams</h3>
+      <p>We integrate carbon credits and mobile payment incentives to make tree stewardship profitable for local people.</p>
+    </div>
+    <div class="step">
+      <img src="{% static 'images/social-movement.png' %}" alt="Social Icon">
+      <h3>Restoration as a Social Movement</h3>
+      <p>We’re transforming restoration into a powerful movement that combines ecology, technology, and community-driven change.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3 style="margin-top: 2rem;">Our People</h3>
+  <ul class="team-list">
+    <li>Telemaque Ndizihiwe – Machine Learning and AI Model Development</li>
+    <li>Miracle Joseph – Remote Sensing and Satellite Imaging Analyst</li>
+    <li>Tania Castro – Environmental DNA Analysis</li>
+    <li>Penelope Muteteli – Citizen Research Project Manager / Transformation System</li>
+    <li>Yihong Zhang – Data Analyst / Knowledge Management</li>
+    <li>Community Engagement and Social Innovation – <em>Recruiting</em></li>
+    <li>Project Management and Implementation – <em>Recruiting</em></li>
+    <li>Website Developer – <em>Recruiting</em></li>
+  </ul>
+</section>
+{% endblock %}
